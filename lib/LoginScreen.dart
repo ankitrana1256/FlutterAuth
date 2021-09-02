@@ -1,5 +1,8 @@
 import 'package:chat_app/CreateAccount.dart';
+import 'package:chat_app/HomePage.dart';
 import 'package:chat_app/Methods.dart';
+import 'package:chat_app/widgets/SignInWithSocial.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -85,6 +88,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   isLoading = false;
                                 });
                                 print("Login Successfully");
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (_) => HomePage()));
                               } else {
                                 print("Wrong Credentials");
                               }
@@ -113,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   SizedBox(
-                    height: size.height / 18,
+                    height: size.height / 26,
                   ),
                   GestureDetector(
                     onTap: () => Navigator.of(context).push(
@@ -129,7 +134,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                  )
+                  ),
+                  SignInWithSocial(size: size)
                 ],
               ),
             ),
