@@ -1,4 +1,4 @@
-# chat_app
+# Authentication with flutter
 
 A new Flutter project.
 
